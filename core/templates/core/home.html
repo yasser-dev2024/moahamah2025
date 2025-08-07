@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مكتب المحاماة - الصفحة الرئيسية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #e1ecf4, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .welcome-container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        .welcome-container h1 {
+            color: #004080;
+            margin-bottom: 10px;
+        }
+        .welcome-container p {
+            color: #444;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .welcome-container a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+        .welcome-container a:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <img src="{% static 'images/logo.png' %}" alt="شعار المكتب" class="logo">
+        <h1>مرحبًا بك في مكتب المحاماة</h1>
+        <p>نحن هنا للدفاع عن حقوقك وتقديم الاستشارات القانونية باحترافية.</p>
+        <a href="{% url 'login' %}">تسجيل الدخول</a>
+        <a href="{% url 'register' %}">إنشاء حساب</a>
+    </div>
+</body>
+</html>

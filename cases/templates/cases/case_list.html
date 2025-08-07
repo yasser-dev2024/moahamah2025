@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>قائمتي - القضايا</title>
+</head>
+<body>
+    <h2>قضاياي</h2>
+    <a href="{% url 'case_create' %}">➕ إضافة قضية جديدة</a>
+    <ul>
+        {% for case in cases %}
+            <li>{{ case.title }} - {{ case.get_case_type_display }} - {{ case.created_at }}</li>
+        {% empty %}
+            <li>لا توجد قضايا حتى الآن.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
