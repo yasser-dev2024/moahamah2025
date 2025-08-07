@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>قائمة القضايا</h2>
+<table>
+    <thead>
+        <tr>
+            <th>العنوان</th>
+            <th>العميل</th>
+            <th>النوع</th>
+            <th>الحالة</th>
+            <th>تاريخ الإنشاء</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lawsuit in lawsuits %}
+        <tr>
+            <td>{{ lawsuit.title }}</td>
+            <td>{{ lawsuit.client_name }}</td>
+            <td>{{ lawsuit.get_case_type_display }}</td>
+            <td>{{ lawsuit.get_status_display }}</td>
+            <td>{{ lawsuit.created_at|date:"Y-m-d" }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">لا توجد قضايا حالياً.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

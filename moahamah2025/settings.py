@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     # ✅ التطبيقات المخصصة
     'users',
     'core',
-    'cases',  # ✅ التطبيق الحالي
+    'lawsuits',  # ✅ اسم التطبيق الصحيح
 ]
 
 MIDDLEWARE = [
@@ -37,10 +37,11 @@ ROOT_URLCONF = 'moahamah2025.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # ✅ يفضل تخصيص مجلد templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -71,6 +72,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

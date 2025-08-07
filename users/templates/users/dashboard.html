@@ -58,6 +58,25 @@
             margin-top: 10px;
         }
 
+        .actions {
+            margin-top: 40px;
+        }
+
+        .actions a {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .actions a:hover {
+            background-color: #004999;
+        }
+
         @media (max-width: 600px) {
             .container h1 {
                 font-size: 22px;
@@ -70,6 +89,11 @@
             .logout-btn {
                 font-size: 13px;
                 padding: 8px 15px;
+            }
+
+            .actions a {
+                font-size: 14px;
+                padding: 10px 18px;
             }
         }
     </style>
@@ -85,7 +109,10 @@
     <h1>مرحبًا بك <strong>{{ request.user.username }}</strong> 👋</h1>
     <p>أنت الآن في لوحة التحكم الخاصة بك.</p>
 
-    <!-- يمكن إضافة روابط مستقبلية هنا -->
+    <div class="actions">
+        <a href="{% url 'lawsuits:list' %}">📂 عرض القضايا</a>
+        <a href="{% url 'lawsuits:create' %}">➕ رفع قضية جديدة</a>
+    </div>
 </div>
 
 </body>

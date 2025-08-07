@@ -3,7 +3,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+
+    # ✅ روابط المستخدمين (تسجيل - دخول - تسجيل خروج - لوحة تحكم)
     path('', include('users.urls')),
-    path('cases/', include('cases.urls')),  # ✅ ربط القضايا
+
+    # ✅ روابط القضايا
+    path('lawsuits/', include('lawsuits.urls')),
 ]
